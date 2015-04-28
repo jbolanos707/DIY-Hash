@@ -1,17 +1,22 @@
 class MyHash
 
   define_method(:initialize) do
-    @key = []
-    @value = []
+    @keys = []
+    @values = []
+
   end
 
   define_method(:store) do |key, value|
-    @key.push(key)
-    @value.push(value)
-    @value.at(0)
+    @keys.push(key)
+    @values.push(value)
+    @values.at(0)
   end
-  #define_method(:fetch) do
-    #@value
-  #end
 
+  define_method(:fetch) do |hashkey|
+
+    key_index = @keys.index(hashkey)
+
+    return_value = @values.at(key_index)
+
+  end
 end
